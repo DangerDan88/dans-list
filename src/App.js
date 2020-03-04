@@ -1,24 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+let dailyTasks = [
+  { name: "Code 1 hour everyday", done: false },
+  { name: "100 percent on diet", done: false },
+  { name: "listen to 3 syntax podcasts a week", done: false }
+];
 
 const App = () => {
-  function useLocalState(localItem) {
-    const [local, setLocal] = useState(localStorage.getItem(localItem));
-
-    function setLocalItem(newItem) {
-      localStorage.setItem(localStorage, newItem);
-      setLocal(newItem);
-    }
-    return [local, setLocal];
-  }
-  useLocalState();
-  const [value, setValue] = useState("value");
-  return (
-    <div className="App">
-      <h1>State persisting into Local storage</h1>
-      <p>ToDo: {value}</p>
-      <button onClick={() => setValue("code")}>Code</button>
-    </div>
-  );
+  const [tasks, setTasks] = useState({});
+  const [input, setInputValue] = useState("");
+  return <div className="App"></div>;
 };
 
 export default App;
